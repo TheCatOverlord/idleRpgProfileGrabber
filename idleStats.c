@@ -181,11 +181,11 @@ int main(void)
     }
     printf("Number of deaths: %d\n", json_object_get_int(deaths));
     printf("Total completed adventures: %d\n", json_object_get_int(completed));
-    float adventureAverage = json_object_get_int(completed) / json_object_get_int(deaths);
-    printf("Adventure success percentage: %1.0f\n", adventureAverage);
+    float adventureAverage = (json_object_get_int(completed) / json_object_get_int(deaths)) * 100;
+    printf("Adventure success percentage: %1.0f %\n", adventureAverage);
     printf("Lovescore: %d\n", json_object_get_int(lovescore));
     printf("Current guild rank: %s\n", json_object_get_string(guildrank));
-    printf("Completed puzzles: %d", json_object_get_int(puzzles));
+    printf("Completed puzzles: %d\n", json_object_get_int(puzzles));
     printf("Attack multiplier: %0.1f\n", json_object_get_double(atkMultiply));
     printf("Defense multiplier: %0.1f\n", json_object_get_double(defMultiply));
     printf("Trick or treat: %d\n", json_object_get_int(trickOrTreat));
